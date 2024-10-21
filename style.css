@@ -13,6 +13,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column; /* Allow flexbox layout */
+    justify-content: space-between; /* Space out the content */
 }
 
 header {
@@ -31,17 +32,16 @@ header {
 }
 
 .card {
-    width: 80%;
-    max-width: 470px;
+    width: 90%;
+    max-width: 485px;
     background: linear-gradient(135deg, #3ad4f0, #5b548a);
     color: #fff;
-    border-radius: 20px;
-    margin: 20px auto; /* Center card */
+    border-radius: 30px;
+    margin: 0 auto 0;
     padding: 40px 35px;
     text-align: center;
 }
 
-/* Search box styles */
 .search {
     width: 100%;
     display: flex;
@@ -76,31 +76,30 @@ header {
     width: 16px;
 }
 
-/* Weather icon styles */
 .weather-icon {
     width: 170px;
     margin-top: 30px;
 }
 
-/* Temperature and city styles */
 .weather h1 {
     font-size: 80px;
     font-weight: 500;
-    margin-top: -20px; /* Decreased margin to bring closer to the icon */
+    margin-top: -15px; /* Decreased margin to bring closer to the icon */
 }
 
 .weather h2 {
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 400;
-    margin-top: -25px; /* Decreased margin to bring closer to the icon */
+    margin-top: -15px; /* Decreased margin to bring closer to the icon */
 }
+
 
 .details {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .col {
@@ -131,12 +130,10 @@ header {
     font-size: 16px; /* Adjusted font size for labels */
 }
 
-/* Weather display styles */
 .weather {
     display: none;
 }
 
-/* Error message styles */
 .error {
     text-align: left;
     margin-left: 10px;
@@ -145,20 +142,14 @@ header {
     display: none;
 }
 
-/* Fixed footer styles */
 footer {
     background: linear-gradient(135deg, #3ad4f0, #5b548a);
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    position: fixed; /* Fix the footer at the bottom */
-    bottom: 0; /* Align to the bottom */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
-/* Footer content styles */
 .footer-content p {
     margin: 0;
     font-family: 'Poppins', sans-serif;
