@@ -19,11 +19,21 @@ WeatherlyApp/
 
 ## Project Structure
 
-WeatherlyApp/ │ ├── images/ # Contains all images used in the app │ ├── clouds.png # Icon for cloudy weather │ ├── clear.png # Icon for clear weather │ ├── drizzle.png # Icon for drizzle weather │ ├── humidity.png # Icon representing humidity │ ├── mist.png # Icon for misty weather │ ├── rain.png # Icon for rainy weather │ ├── search.png # Icon for the search button │ ├── wind.png # Icon representing wind speed │ ├── style.css # The main CSS file for styling the application ├── index.html # The main HTML file that structures the application └── README.md # This file explaining the project structure and how to run the app
-
-
-
-
+WeatherlyApp/
+│
+├── images/                    # Contains all images used in the app
+│   ├── clouds.png             # Icon for cloudy weather
+│   ├── clear.png              # Icon for clear weather
+│   ├── drizzle.png            # Icon for drizzle weather
+│   ├── humidity.png           # Icon representing humidity
+│   ├── mist.png               # Icon for misty weather
+│   ├── rain.png               # Icon for rainy weather
+│   ├── search.png             # Icon for the search button
+│   ├── wind.png               # Icon representing wind speed
+│
+├── style.css                  # The main CSS file for styling the application
+├── index.html                 # The main HTML file that structures the application
+├── README.md                  # This file explaining the project structure and how to run the app
 
 
 # Key Files:
