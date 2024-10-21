@@ -41,7 +41,7 @@ WeatherlyApp/
 
     - style.css: This file contains all the styles used in the Weatherly App, such as layout, colors, fonts, and icons.
 
-i   - mages/: This directory contains all the icons and images used in the app for different weather conditions (clouds, rain, clear skies, etc.).
+    - mages/: This directory contains all the icons and images used in the app for different weather conditions (clouds, rain, clear skies, etc.).
 
 # How to Run the Weatherly App
 
