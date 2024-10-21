@@ -9,14 +9,11 @@
     <meta name="Author" content="Claros Orcullo, Zyra Joy Dongon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <!-- Bootstrap CSS for responsive design and styling -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
     <!-- Linking CSS stylesheets for custom and external styling -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    
+
     <!-- Including external JavaScript for smooth scrolling functionality -->
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
@@ -55,17 +52,17 @@
                 <!-- Details section for humidity and wind speed -->
                 <div class="details">
                     <div class="col">
-                        <img src="images/humidity.png">
+                        <img src="images/humidity.png" class="icon">
                         <div>
                             <p class="humidity">65%</p>
-                            <p>Humidity</p>
+                            <p class="humidity-label">Humidity</p>
                         </div>
                     </div>
                     <div class="col">
-                        <img src="images/wind.png">
+                        <img src="images/wind.png" class="icon">
                         <div>
                             <p class="wind">3 km/h</p>
-                            <p>Wind Speed</p>
+                            <p class="wind-label">Wind Speed</p>
                         </div>
                     </div>
                 </div>
@@ -74,73 +71,65 @@
     </div>
 
     <!-- JavaScript code to handle the weather data fetching and display -->
-    
     <script>
         // Variables for API key and URL
-        const apiKey = "2dc08288abcf65ff7d404cd89074a0c8"; // Your OpenWeatherMap API key
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="; // API URL for weather data
-    
+        const apiKey = "2dc08288abcf65ff7d404cd89074a0c8";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
         // DOM elements for search box, search button, and weather icon
-        const searchBox = document.querySelector(".search input"); // Input field for city name
-        const searchBtn = document.querySelector(".search button"); // Search button
-        const weatherIcon = document.querySelector(".weather-icon"); // Weather icon display
-    
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        const weatherIcon = document.querySelector(".weather-icon");
+
         // Function to check weather based on city input
-        async function checkWeather(city){
-            const response = await fetch(apiUrl + city + `&appid=${apiKey}`); // Fetch weather data
-    
+        async function checkWeather(city) {
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
             // If city is invalid, show error message
-            if(response.status == 404){
-                document.querySelector(".error").style.display = "block"; // Show error message
-                document.querySelector(".weather").style.display = "none"; // Hide weather display
-            }
-            else{
+            if (response.status == 404) {
+                document.querySelector(".error").style.display = "block";
+                document.querySelector(".weather").style.display = "none";
+            } else {
                 // If city is valid, fetch and display weather data
-                var data = await response.json(); // Parse JSON response
-    
+                var data = await response.json();
+
                 // Updating the UI with fetched data
-                document.querySelector(".city").innerHTML = data.name; // Set city name
-                document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C"; // Set temperature
-                document.querySelector(".humidity").innerHTML = data.main.humidity + "%"; // Set humidity
-                document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h"; // Set wind speed
-    
+                document.querySelector(".city").innerHTML = data.name;
+                document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+                document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+                document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";
+
                 // Update weather icon based on the weather condition
-                if(data.weather[0].main == "Clouds"){
-                    weatherIcon.src ="images/clouds.png"; // Set cloudy icon
+                if (data.weather[0].main == "Clouds") {
+                    weatherIcon.src = "images/clouds.png";
+                } else if (data.weather[0].main == "Clear") {
+                    weatherIcon.src = "images/clear.png";
+                } else if (data.weather[0].main == "Rain") {
+                    weatherIcon.src = "images/rain.png";
+                } else if (data.weather[0].main == "Drizzle") {
+                    weatherIcon.src = "images/drizzle.png";
+                } else if (data.weather[0].main == "Mist") {
+                    weatherIcon.src = "images/mist.png";
                 }
-                else if(data.weather[0].main == "Clear"){
-                    weatherIcon.src ="images/clear.png"; // Set clear icon
-                }
-                else if(data.weather[0].main == "Rain"){
-                    weatherIcon.src ="images/rain.png"; // Set rain icon
-                }
-                else if(data.weather[0].main == "Drizzle"){
-                    weatherIcon.src ="images/drizzle.png"; // Set drizzle icon
-                }
-                else if(data.weather[0].main == "Mist"){
-                    weatherIcon.src ="images/mist.png"; // Set mist icon
-                }
-    
+
                 // Show the weather info and hide error message
-                document.querySelector(".weather").style.display ="block"; // Show weather display
-                document.querySelector(".error").style.display ="none"; // Hide error message
+                document.querySelector(".weather").style.display = "block";
+                document.querySelector(".error").style.display = "none";
             }
         }
-    
+
         // Event listener for search button click
-        searchBtn.addEventListener("click", () => { 
-            checkWeather(searchBox.value); // Call checkWeather function with input value
+        searchBtn.addEventListener("click", () => {
+            checkWeather(searchBox.value);
         });
-    
-        // Event listener for Enter key press in the search box
+
+        // Event listener for enter key press
         searchBox.addEventListener("keypress", (event) => {
-            if (event.key === "Enter") { // Check if the pressed key is Enter
-                checkWeather(searchBox.value); // Call checkWeather function with input value
+            if (event.key === "Enter") {
+                checkWeather(searchBox.value);
             }
         });
     </script>
-    
-    
 
     <!-- Fixed Footer section containing project credits -->
     <footer>

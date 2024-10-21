@@ -13,21 +13,17 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column; /* Allow flexbox layout */
+    justify-content: space-between; /* Space out the content */
 }
 
-/* Fixed header styles */
 header {
     background-color: rgba(58, 212, 240, 0.8); /* Slightly transparent background */
     padding: 20px 0;
     text-align: center;
-    position: fixed; /* Fix the header at the top */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    z-index: 10; /* Ensure it appears above other content */
+    position: relative; /* Ensure it's positioned relative to the page */
+    z-index: 10; /* Make sure it appears above other content */
 }
 
-/* Title styles within header */
 .header-title {
     font-size: 28px;
     color: #fff;
@@ -35,30 +31,17 @@ header {
     margin: 0;
 }
 
-/* Main content area */
-.main-content {
-    flex: 1; /* Allow the content to grow and fill the remaining space */
-    padding-top: 80px; /* Space for the fixed header */
-    padding-bottom: 60px; /* Space for the fixed footer */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-/* Card styles */
 .card {
-    width: 90%;
+    width: 80%;
     max-width: 470px;
     background: linear-gradient(135deg, #3ad4f0, #5b548a);
     color: #fff;
     border-radius: 20px;
-    margin: 20px auto; /* Center card */
+    margin: 100px auto 0;
     padding: 40px 35px;
     text-align: center;
 }
 
-/* Search box styles */
 .search {
     width: 100%;
     display: flex;
@@ -93,31 +76,30 @@ header {
     width: 16px;
 }
 
-/* Weather icon styles */
 .weather-icon {
     width: 170px;
     margin-top: 30px;
 }
 
-/* Temperature and city styles */
 .weather h1 {
     font-size: 80px;
     font-weight: 500;
+    margin-top: -20px; /* Decreased margin to bring closer to the icon */
 }
 
 .weather h2 {
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 400;
-    margin-top: -10px;
+    margin-top: -25px; /* Decreased margin to bring closer to the icon */
 }
 
-/* Weather details layout */
+
 .details {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .col {
@@ -127,21 +109,31 @@ header {
 }
 
 .col img {
-    width: 40px;
+    width: 50px; /* Increased the width of images */
+    height: 50px; /* Set a fixed height for the images to match the text */
     margin-right: 10px;
 }
 
-.humidity, .wind {
-    font-size: 28px;
+.humidity {
+    font-size: 32px; /* Increased font size for humidity number */
     margin-top: -6px;
+    font-weight: bold; /* Optional: Makes the number bold */
 }
 
-/* Weather display styles */
+.wind {
+    font-size: 32px; /* Increased font size for wind speed number */
+    margin-top: -6px;
+    font-weight: bold; /* Optional: Makes the number bold */
+}
+
+.humidity-label, .wind-label {
+    font-size: 16px; /* Adjusted font size for labels */
+}
+
 .weather {
     display: none;
 }
 
-/* Error message styles */
 .error {
     text-align: left;
     margin-left: 10px;
@@ -150,20 +142,14 @@ header {
     display: none;
 }
 
-/* Fixed footer styles */
 footer {
     background: linear-gradient(135deg, #3ad4f0, #5b548a);
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    position: fixed; /* Fix the footer at the bottom */
-    bottom: 0; /* Align to the bottom */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
-/* Footer content styles */
 .footer-content p {
     margin: 0;
     font-family: 'Poppins', sans-serif;
