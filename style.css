@@ -9,23 +9,23 @@ body {
     background: url(images/drop.png);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Make the background fixed */
+    background-attachment: fixed;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Allow flexbox layout */
-    justify-content: space-between; /* Space out the content */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
-    background-color: rgba(58, 212, 240, 0.8); /* Slightly transparent background */
+    background-color: rgba(58, 212, 240, 0.8);
     padding: 20px 0;
     text-align: center;
-    position: relative; /* Ensure it's positioned relative to the page */
-    z-index: 10; /* Make sure it appears above other content */
+    position: relative;
+    z-index: 10;
 }
 
 .header-title {
-    font-size: 28px;
+    font-size: 2rem;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -37,7 +37,7 @@ header {
     background: linear-gradient(135deg, #3ad4f0, #5b548a);
     color: #fff;
     border-radius: 30px;
-    margin: 0 auto 0;
+    margin: 0 auto;
     padding: 40px 35px;
     text-align: center;
 }
@@ -82,17 +82,16 @@ header {
 }
 
 .weather h1 {
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 500;
-    margin-top: -15px; /* Decreased margin to bring closer to the icon */
+    margin-top: -15px;
 }
 
 .weather h2 {
-    font-size: 45px;
+    font-size: 2.5rem;
     font-weight: 400;
-    margin-top: -15px; /* Decreased margin to bring closer to the icon */
+    margin-top: -15px;
 }
-
 
 .details {
     display: flex;
@@ -109,25 +108,26 @@ header {
 }
 
 .col img {
-    width: 50px; /* Increased the width of images */
-    height: 50px; /* Set a fixed height for the images to match the text */
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 }
 
 .humidity {
-    font-size: 32px; /* Increased font size for humidity number */
+    font-size: 32px;
     margin-top: -6px;
-    font-weight: bold; /* Optional: Makes the number bold */
+    font-weight: bold;
 }
 
 .wind {
-    font-size: 32px; /* Increased font size for wind speed number */
+    font-size: 32px;
     margin-top: -6px;
-    font-weight: bold; /* Optional: Makes the number bold */
+    font-weight: bold;
 }
 
-.humidity-label, .wind-label {
-    font-size: 16px; /* Adjusted font size for labels */
+.humidity-label,
+.wind-label {
+    font-size: 16px;
 }
 
 .weather {
@@ -154,4 +154,55 @@ footer {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    .weather h1 {
+        font-size: 4rem;
+    }
+
+    .weather h2 {
+        font-size: 2rem;
+    }
+
+    .details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .col img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .humidity,
+    .wind {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search input {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+
+    .search button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .weather-icon {
+        width: 140px;
+    }
 }
